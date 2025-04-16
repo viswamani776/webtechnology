@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show & Hide Password</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            transition: background-color 0.5s;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="password" id="password" placeholder="Enter Password">
+    <button onclick="togglePassword()" id="toggleBtn">Show</button>
+    
+    <script>
+        function togglePassword() {
+            let passwordField = document.getElementById("password");
+            let toggleBtn = document.getElementById("toggleBtn");
+            
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleBtn.innerText = "Hide";
+            } else {
+                passwordField.type = "password";
+                toggleBtn.innerText = "Show";
+            }
+        }
+    </script>
+</body>
+</html>
